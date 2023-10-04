@@ -67,8 +67,7 @@ class TileSheet {
 		}
 	}
 
-	public function toTileSet()
-	{
+	public function toTileSet() {
 		trace("Tilesheet::toTileSet : " + tile_count);
 
 		var theTileset = new Tileset(_bitmap.bitmapData);

@@ -75,8 +75,7 @@ class TextBox extends Panel {
         
     }
 
-    function onOk(event:TriggerEvent)
-    {
+    function onOk(event:TriggerEvent) {
         // Use more clean Fire signals (MVP)
         handler.onTextBox(input.text, mindset);
     }

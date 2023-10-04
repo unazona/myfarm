@@ -99,8 +99,7 @@ class Mind extends EventDispatcher
         return reponse;
     }
 
-    public function handleMapSet(result:Dynamic)
-    {
+    public function handleMapSet(result:Dynamic) {
         trace("genetrated map_data "+ result.choices[0].message.role);
         trace("genetrated map_data "+ result.choices[0].message.content);
 

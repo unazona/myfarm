@@ -92,8 +92,7 @@ class TileWorld extends Sprite {
 		// #2 : Assign rects
 
 		for (i in 0...25)
-			for (j in 0...25)
-			{
+			for (j in 0...25) {
 				paintTile(Std.int(Math.min(i*j, 50)), i, j);
 			}
 	}
