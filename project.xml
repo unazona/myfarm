@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="MyFarm" package="com.sample.myfarm" version="1.0.0" company="Company Name" />
+	<app main="Main" path="Export" file="MyFarm" />
+	
+	<haxedef name="OPENAI_KEY" value="PUT YOUR KEY HERE" />
+	<haxedef name="OPENAI_ORG" value="myOrg" />
+	<haxedef name="OPENAI_API" value="https://api.openai.com/v1/chat/completions" />
+	<haxedef name="OPENAI_MODEL" value="gpt-3.5-turbo" />
+	
+	<window fps="60" background="0x000000" hardware="true" vsync="true" />
+
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="feathersui" />
+	<haxelib name="actuate" />
+
+	<haxelib name="tink_json" />
+	
+	<assets path="Assets" rename="assets" />
+	
+</project>
