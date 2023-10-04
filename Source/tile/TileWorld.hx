@@ -16,6 +16,12 @@ import tile.TileSheet;
 	Defines Tiles World
 **/
 class TileWorld extends Sprite {
+	// Move to json file
+	private static var TILE_WIDTH:Int = 32;
+	private static  var TILE_WIDTH_HALF:Int = 16;
+	private static  var TILE_HEIGHT:Int = 24;
+	private static  var TILE_HEIGHT_HALF:Int = 12;
+
 	private var	tile_sheet:TileSheet;		// Loadable Tilesheet from JSON
 
 	private var tile_set:Tileset;			// Translate Tilesheet into Tileset
@@ -80,37 +86,19 @@ class TileWorld extends Sprite {
 			for (j in 0...convert[i].length)
 				paintTile(convert[i][j], i, j);
 	}
-	
-//	public var tileset:Tileset;
-    // Land : 0-10
-    // Rocky land : 11- 16
-    // Mud : 17-21
-    // Grassmud : 3
-	// Water : 101-110
-
 
 	// Move to TileSheet
     public function addTiles() {
 		// #2 : Assign rects
-		//bitmap.x = 400;
-		// tile_map.addTile(new Tile(32, 0, 0)); // X/y
-		//tile_map.addTile(new Tile(33, 32, 0)); // X/y
-		//tile_map.addTile(new Tile(30, 0, 32)); // X/y
 
 		for (i in 0...25)
 			for (j in 0...25)
 			{
 				paintTile(Std.int(Math.min(i*j, 50)), i, j);
-
-				//paintTile(1, i, j);
 			}
 	}
 
 	public function paintTile(id:Int, x:Int, y:Int) {
-		var TILE_WIDTH:Int = 32;
-		var TILE_WIDTH_HALF:Int = 16;
-		var TILE_HEIGHT:Int = 24;
-		var TILE_HEIGHT_HALF:Int = 12;
 
 		var wx = x * TILE_WIDTH_HALF - y * TILE_WIDTH_HALF;
 		var wy = x * TILE_HEIGHT_HALF + y * TILE_HEIGHT_HALF;
