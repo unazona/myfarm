@@ -7,6 +7,9 @@ import feathers.layout.VerticalLayout;
 import feathers.controls.Label;
 import feathers.controls.Panel;
 
+/**
+	Keep User waiting with a fake timer.
+**/
 class WaitBox extends Panel {
 
     var time_label:Label;
@@ -48,7 +51,7 @@ class WaitBox extends Panel {
             (start < 0) ? 0 : start--;
 
             if (time_label != null) 
-                time_label.text = "Esimated: " + start + "S";
+                time_label.text = "Esimated: " + start + "s";
          }
 
 

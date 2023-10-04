@@ -13,6 +13,9 @@ import feathers.layout.VerticalLayout;
 import feathers.controls.Label;
 import feathers.controls.Panel;
 
+/**
+	Expose Tools to user.
+**/
 class ToolBox extends Panel {
 
     var handler:UIHandler; 

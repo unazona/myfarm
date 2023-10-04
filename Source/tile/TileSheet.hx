@@ -6,9 +6,9 @@ import openfl.display.Tileset;
 import openfl.Assets;
 import openfl.display.Bitmap;
 
-/*
- *  Describe Tilesheet: load from JSON file
- */ 
+/**
+	Load tiles spritesheet from json file.
+**/
 
 @:jsonParse(function (json) return new tile.TileSheet(json.name, json.tile_width, json.tile_height, json.padding))
 class TileSheet {

@@ -3,6 +3,9 @@ package;
 import scene.PlayScene;
 import openfl.display.Sprite;
 
+/**
+	Main Entry.
+**/
 class Main extends Sprite {
 	private var play_scene:PlayScene;
 

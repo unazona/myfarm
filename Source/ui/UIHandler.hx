@@ -10,8 +10,9 @@ import feathers.events.TriggerEvent;
 import openfl.events.Event;
 import events.MindEvent;
 
-// handle events from UI, keep track of running scene
-// Give event power to handler
+/**
+	Handle event between UI  and running scene.
+**/
 class UIHandler extends EventDispatcher {
 	public static var ZOOM_EVENT = "ZoomEvent";
 

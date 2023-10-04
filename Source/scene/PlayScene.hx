@@ -9,6 +9,9 @@ import ai.Mind;
 import ui.ToolBox;
 import ui.UIHandler;
 
+/**
+	Main play scene
+**/
 class PlayScene extends Scene {
     private var tile_world:TileWorld;
     private var tool_box:ToolBox;

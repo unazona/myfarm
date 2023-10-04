@@ -4,9 +4,7 @@ import events.MindEvent;
 import openfl.events.EventDispatcher;
 import openfl.Assets;
 
-import haxe.exceptions.NotImplementedException;
-import tink.core.Future;
-import haxe.Json;
+
 import haxe.Http;
 import haxe.extern.EitherType;
 
@@ -21,9 +19,10 @@ enum MindSet {
     MindMotion;
 }
 
+// Chat Completion def : inspired by hxopenai
 typedef ChatCompletion = {
-    var model:String;
-    var messages:Array<Message>;
+    var model:String;               // OpenAI Model Name
+    var messages:Array<Message>;    // 
 
     @:optional var suffix:String;
     @:optional var max_tokens:Int;
@@ -40,13 +39,16 @@ typedef ChatCompletion = {
     @:optional var logit_bias:Array<String>; //Not sure
     @:optional var user:String;
 }
+/**
+	Communicates with OpenAI Rest API.
 
+    User data is encapsulated using a predefined prompt
+**/
 class Mind extends EventDispatcher
 {
 
     public static final instance:Mind = new Mind();
 
-    //<haxedef name="OPENAI_URL" value="42" />
     private var openai_key:String;
     private var openai_org:String;
     private var openai_model:String;
@@ -63,20 +65,17 @@ class Mind extends EventDispatcher
         openai_org = haxe.macro.Compiler.getDefine("OPENAI_ORG");
         api_url = haxe.macro.Compiler.getDefine("OPENAI_API");
         openai_model = haxe.macro.Compiler.getDefine("OPENAI_MODEL");
+
         // Keep eye on values
         trace("[OpenAI] Token : " + openai_key);
         trace("[OpenAI] Org : " + openai_org);
         trace("[OpenAI] URL : " + api_url);
-
-        // Raise exception in case values are not set in project XML
     }
 
+
     public function createChatCompletion(completion:ChatCompletion):Dynamic {
-        
         var _data:String;
-
         var reponse:Dynamic;
-
         var http = new haxe.Http(api_url);
 
         http.addHeader("User-Agent", "myFarm (https://narenjo.com)");
@@ -120,8 +119,9 @@ class Mind extends EventDispatcher
     public function process(mindset:MindSet, text:String) {
         var system = "You are an AI assistant with specific role to generate json data based on user prompt. You output only json.";
 
-        //testCase();
-      //  return;
+        // Offline test case
+        // testCase();
+        // return;
 
 		Assets.loadText("assets/mapset.prompt").onComplete(
 			function(value)  {

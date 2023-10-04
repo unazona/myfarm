@@ -12,6 +12,9 @@ import openfl.display.Sprite;
 
 import tile.TileSheet;
 
+/**
+	Defines Tiles World
+**/
 class TileWorld extends Sprite {
 	private var	tile_sheet:TileSheet;		// Loadable Tilesheet from JSON
 
@@ -85,16 +88,6 @@ class TileWorld extends Sprite {
     // Grassmud : 3
 	// Water : 101-110
 
-
-	// chatGPT prompt
-	// Describe spritesheet
-	
-	// My Tilemap is 25x25, json format, map_data contains the map data in double array format
-	// Tiles are described as following:
-	// Land variant tile values ranging as [11-16]
-	// Water variant tile values ranging as [101-110]
-	// When generating use all tiles variant
-	// Generate 50% land and 50% water
 
 	// Move to TileSheet
     public function addTiles() {
